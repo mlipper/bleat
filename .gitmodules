@@ -1,3 +1,6 @@
 [submodule "docs/themes/hugo-whisper-theme"]
 	path = docs/themes/hugo-whisper-theme
 	url = https://github.com/jugglerx/hugo-whisper-theme.git
+[submodule "docs/themes/mainroad"]
+	path = docs/themes/mainroad
+	url = https://github.com/vimux/mainroad
