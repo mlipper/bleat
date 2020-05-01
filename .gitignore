@@ -10,30 +10,6 @@
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
-convert/
-# Created by https://www.gitignore.io/api/go,hugo,helm
-# Edit at https://www.gitignore.io/?templates=go,hugo,helm
-
-### Go ###
-# Binaries for programs and plugins
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
-
-# Test binary, built with `go test -c`
-*.test
-
-# Output of the go coverage tool, specifically when used with LiteIDE
-*.out
-
-# Dependency directories (remove the comment below to include it)
-# vendor/
-
-### Go Patch ###
-/vendor/
-/Godeps/
 
 ### Helm ###
 # Chart dependencies
@@ -41,12 +17,5 @@ convert/
 
 ### Hugo ###
 # Generated files by hugo
-/public/
-/resources/_gen/
-
-# Executable may be added to repository
-hugo.exe
-hugo.darwin
-hugo.linux
-
-# End of https://www.gitignore.io/api/go,hugo,helm
+/docs/**/public/
+/docs/**/resources/_gen/
