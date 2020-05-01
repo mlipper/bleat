@@ -1,0 +1,17 @@
+apiVersion: v1
+name: geoclient
+version: 0.2.0
+appVersion: 2.0.0-rc.7
+kubeVersion: ">=1.14.0-0"
+engine: gotpl
+description: Geoclient provides a RESTful API for calling NYC Department of City Planning's Geosupport geocoder.
+home: https://github.com/mlipper
+sources:
+  - https://github.com/mlipper/geoclient
+maintainers:
+  - name: mlipper
+    url: https://github.com/mlipper
+    email: mlipper@gmail.com
+keywords:
+  - geocoding
+  - NYC
