@@ -1,7 +1,8 @@
 baseURL = "/"
 languageCode = "en-us"
 #theme = "ga-hugo-theme"
-theme = "hugo-whisper-theme"
+#theme = "hugo-whisper-theme"
+theme = "mainroad"
 themesDir = "themes"
 title = "Geoclient"
 
