@@ -1,10 +1,11 @@
 ---
 title: 'API Documentation'
 date: 2019-02-11T19:27:37+10:00
+draft: false
 weight: 2
 ---
 
-# Geoclient v2
+## Geoclient v2
 
 Geoclient is software which provides developer-friendly API’s for *geocoding* New York City location information by proxying requests to Geosupport which is the City's official geocoder of record.
 
@@ -17,19 +18,19 @@ The Geoclient service provides the following endpoints:
 
 | Resource       | Description                                                                                                                                                                                                                                                                                                                                                                            | Geosupport Function                                                                                                                    |
 | --------------:| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| Address[^1]    | Given a valid address, provides blockface-level, property-level, and political information ([source](http://a030-goat.nyc.gov/goat/Function1B)).                                                                                                                                                                                                                                       | [1B](https://nycplanning.github.io/Geosupport-UPG/appendices/appendix13#work-area-2-cow-function-1b)                                   |
-| Address Point  | "Function AP finds the address point for a given address. Address points are point locations located approximately five feet inside the building along the corresponding street frontage. Address points do not exist for all administrative address ranges assigned to a building, but usually only reflect the posted address." ([source](http://a030-goat.nyc.gov/goat/FunctionAP)) | [AP](https://nycplanning.github.io/Geosupport-UPG/appendices/appendix13#work-area-2-cow-function-ap)                                   |
-| BBL            | Given a valid borough, block, and lot provides property-level information. ([source](http://a030-goat.nyc.gov/goat/FunctionBL))                                                                                                                                                                                                                                                        | [BL](https://nycplanning.github.io/Geosupport-UPG/appendices/appendix13#work-area-2-cow-functions-1a-bl-bn-extended)                   |
-| BIN            | Given a valid building identification number provides property-level information. ([source](http://a030-goat.nyc.gov/goat/FunctionBN))                                                                                                                                                                                                                                                 | [BN](https://nycplanning.github.io/Geosupport-UPG/appendices/appendix13#work-area-2-cow-functions-1a-bl-bn-extended)                   |
-| Blockface      | Given a valid borough, "on street" and cross streets provides blockface-level information. ([source](http://a030-goat.nyc.gov/goat/Function3))                                                                                                                                                                                                                                         | [3](https://nycplanning.github.io/Geosupport-UPG/appendices/appendix13#work-area-2-cow-function-3#work-area-2-cow-function-3-extended) |
-| Intersection   | Given a valid borough and cross streets returns information for the point defined by the two streets. ([source](http://a030-goat.nyc.gov/goat/Function2))                                                                                                                                                                                                                              | [2](https://nycplanning.github.io/Geosupport-UPG/appendices/appendix13#work-area-2-cow-function-2)                                     |
-| Place[^1]      | Same as 'Address' above using well-known NYC place name for input (instead of a house number and street).                                                                                                                                                                                                                                                                              | [1B](https://nycplanning.github.io/Geosupport-UPG/appendices/appendix13#work-area-2-cow-function-1b)                                   |
+| Address[^1]    | Given a valid address, provides blockface-level, property-level, and political information ([source](http://a030-goat.nyc.gov/goat/Function1B)).                                                                                                                                                                                                                                       | [`1B`](https://nycplanning.github.io/Geosupport-UPG/appendices/appendix13#work-area-2-cow-function-1b)                                   |
+| Address Point  | "Function AP finds the address point for a given address. Address points are point locations located approximately five feet inside the building along the corresponding street frontage. Address points do not exist for all administrative address ranges assigned to a building, but usually only reflect the posted address." ([source](http://a030-goat.nyc.gov/goat/FunctionAP)) | [`AP`](https://nycplanning.github.io/Geosupport-UPG/appendices/appendix13#work-area-2-cow-function-ap)                                   |
+| BBL            | Given a valid borough, block, and lot provides property-level information. ([source](http://a030-goat.nyc.gov/goat/FunctionBL))                                                                                                                                                                                                                                                        | [`BL`](https://nycplanning.github.io/Geosupport-UPG/appendices/appendix13#work-area-2-cow-functions-1a-bl-bn-extended)                   |
+| BIN            | Given a valid building identification number provides property-level information. ([source](http://a030-goat.nyc.gov/goat/FunctionBN))                                                                                                                                                                                                                                                 | [`BN`](https://nycplanning.github.io/Geosupport-UPG/appendices/appendix13#work-area-2-cow-functions-1a-bl-bn-extended)                   |
+| Blockface      | Given a valid borough, "on street" and cross streets provides blockface-level information. ([source](http://a030-goat.nyc.gov/goat/Function3))                                                                                                                                                                                                                                         | [`3`](https://nycplanning.github.io/Geosupport-UPG/appendices/appendix13#work-area-2-cow-function-3#work-area-2-cow-function-3-extended) |
+| Intersection   | Given a valid borough and cross streets returns information for the point defined by the two streets. ([source](http://a030-goat.nyc.gov/goat/Function2))                                                                                                                                                                                                                              | [`2`](https://nycplanning.github.io/Geosupport-UPG/appendices/appendix13#work-area-2-cow-function-2)                                     |
+| Place[^1]      | Same as 'Address' above using well-known NYC place name for input (instead of a house number and street).                                                                                                                                                                                                                                                                              | [`1B`](https://nycplanning.github.io/Geosupport-UPG/appendices/appendix13#work-area-2-cow-function-1b)                                   |
 | Search         | Provides parsing and search algorithm customization for several of the other endpoints listed in this section. Typically used for geocoding unstructured text to support "single-field" user searches. See [Section 1.3](#section-1.3) for details.                                                                                                                                    | `Address`, `BBL`, `BIN`, `Blockface`, `Intersection`, `Place`                                                                          |
-| Streetcode     | Translates a Geosupport street code (`B5SC`, `B7SC`, or `B10SC`) to a street name and `B10SC`. ([source](http://a030-goat.nyc.gov/goat/FunctionD))                                                                                                                                                                                                                                     | [D, DG, DN](https://nycplanning.github.io/Geosupport-UPG/appendices/appendix13#character-only-work-area-1-cow-all-functions)           |
-| Normalize      | Normalizes a street name (but does **not** verify that it actually exists. [source](http://a030-goat.nyc.gov/goat/FunctionN))                                                                                                                                                                                                                                                          | [N](https://nycplanning.github.io/Geosupport-UPG/appendices/appendix13#character-only-work-area-1-cow-all-functions)                   |
+| Streetcode     | Translates a Geosupport street code (`B5SC`, `B7SC`, or `B10SC`) to a street name and `B10SC`. ([source](http://a030-goat.nyc.gov/goat/FunctionD))                                                                                                                                                                                                                                     | [`D`, `DG`, `DN`](https://nycplanning.github.io/Geosupport-UPG/appendices/appendix13#character-only-work-area-1-cow-all-functions)           |
+| Normalize      | Normalizes a street name (but does **not** verify that it actually exists. [source](http://a030-goat.nyc.gov/goat/FunctionN))                                                                                                                                                                                                                                                          | [`N`](https://nycplanning.github.io/Geosupport-UPG/appendices/appendix13#character-only-work-area-1-cow-all-functions)                   |
 | Version        | Provides software version information about the Geoclient endpoint itself and Geosupport version/release info directly from the Geosupport instance this endpoint is currently using.                                                                                                                                                                                                  | HR (undocumented Geosupport metadata function)                                                                                         |
 
-[^1]:See [1EX](https://nycplanning.github.io/Geosupport-UPG/appendices/appendix13#work-area-2-cow-functions-1-1e-extended) and [1AX](https://nycplanning.github.io/Geosupport-UPG/appendices/appendix13#work-area-2-cow-functions-1a-bl-bn-extended)
+[^1]:See [`1EX`](https://nycplanning.github.io/Geosupport-UPG/appendices/appendix13#work-area-2-cow-functions-1-1e-extended) and [`1AX`](https://nycplanning.github.io/Geosupport-UPG/appendices/appendix13#work-area-2-cow-functions-1a-bl-bn-extended)
 
 ## [Roadmap](#roadmap)
 
@@ -134,7 +135,7 @@ The following sections describe how to call the Geoclient API. Required and opti
 /geoclient/2/address.xml?houseNumber=109-20&street=71st rd&borough=queens&app_id=abc123&app_key=def456
 ```
 
-[Example JSON response](#)
+[Example JSON response](#example-address-json-response)
 
 ```json
     {
@@ -277,7 +278,7 @@ The following sections describe how to call the Geoclient API. Required and opti
     }
 ```
 
-[Example XML response](#)
+[Example XML response](#example-address-xml-response)
 
 ```xml
     <geosupportResponse>
@@ -446,7 +447,7 @@ The following sections describe how to call the Geoclient API. Required and opti
   <baseuri>/bbl.xml?borough=manhattan&block=67&lot=1&app_id=abc123&app_key=def456
 ```
 
-[Example JSON response](#)
+[Example JSON response](#example-bbl-json-response)
 
 ```json
     {
@@ -504,7 +505,7 @@ The following sections describe how to call the Geoclient API. Required and opti
     }
 ```
 
-[Example XML response](#)
+[Example XML response](#example-bbl-xml-response)
 
 ```xml
     <geosupportResponse>
@@ -594,7 +595,7 @@ The following sections describe how to call the Geoclient API. Required and opti
   <baseuri>/bin.xml?bin=1057127&app_id=abc123&app_key=def456
 ```
 
-[Example JSON response](#)
+[Example JSON response](#example-bin-json-response)
 
 ```json
     {
@@ -666,9 +667,9 @@ The following sections describe how to call the Geoclient API. Required and opti
     }
 ```
 
-[Example XML response](#)
+[Example XML response](#example-bin-xml-response)
 
-```json
+```xml
     <geosupportResponse>
       <bin>
         <bbl>1018890001</bbl>
@@ -745,7 +746,7 @@ The following sections describe how to call the Geoclient API. Required and opti
     <baseuri>/blockface.xml?onStreet=eldert ln&crossStreetOne=etna street&crossStreetTwo=ridgewood ave&borough=queens&boroughCrossStreetOne=brooklyn&boughCrossStreetTwo=brooklyn&compassDirection=e&app_id=abc123&app_key=def456
 ```
 
-[Example JSON response](#)
+[Example JSON response](#example-blockface-json-response)
 
 ```json
     {
@@ -845,7 +846,7 @@ The following sections describe how to call the Geoclient API. Required and opti
     }
 ```
 
-[Example XML response](#)
+[Example XML response](#example-blockface-xml-response)
 
 ```xml
     <geosupportResponse>
@@ -969,7 +970,7 @@ The following sections describe how to call the Geoclient API. Required and opti
     <baseuri>/intersection.json?crossStreetOne=jamaica ave&crossStreetTwo=eldert ln&borough=brooklyn&boroughCrossStreetTwo=queens&app_id=abc123&app_key=def456
 ```
 
-[Example JSON response](#)
+[Example JSON response](#example-intersection-json-response)
 
 ```json
     {
@@ -1038,7 +1039,7 @@ The following sections describe how to call the Geoclient API. Required and opti
     }
 ```
 
-[Example XML response](#)
+[Example XML response](#example-intersection-xml-response)
 
 ```xml
  <geosupportResponse>
@@ -1130,7 +1131,7 @@ The following sections describe how to call the Geoclient API. Required and opti
     <baseuri>/place.xml?name=rfk bridge&borough=queens&app_id=abc123&app_key=def456
 ```
 
-[Example JSON response](#)
+[Example JSON response](#example-place-json-response)
 
 ```json
     {
@@ -1309,7 +1310,7 @@ The following sections describe how to call the Geoclient API. Required and opti
     }
 ```
 
-[Example XML response](#)
+[Example XML response](#example-place-xml-response)
 
 ```xml
     <geosupportResponse>

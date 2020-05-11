@@ -1,8 +1,7 @@
 baseURL = "/"
 languageCode = "en-us"
-#theme = "ga-hugo-theme"
-#theme = "hugo-whisper-theme"
-theme = "mainroad"
+theme = "hugo-whisper-theme"
+#theme = "mainroad"
 themesDir = "themes"
 title = "Geoclient"
 
@@ -28,14 +27,14 @@ summaryLength = 30
 
   geoclient_version="2.0.0-rc.7"
   geoclient_repository= "https://github.com/CityOfNewYork/geoclient"
-  geosupport_version = "20.1"
-  geosupport_release = "20A"
+  geosupport_version = "20.2"
+  geosupport_release = "20B"
 
   google_analytics_id=""
   homepage_button_link = '/docs'
   homepage_button_text = 'Read The Docs'
-  homepage_intro = 'Whisper is a documentation theme built with Hugo. The design and functionality is intentionally minimal.'
-  homepage_image = '/images/terminal.gif'
+  homepage_intro = 'Geoclient provides a RESTful interface for accessing the Department of City Planning&apos;s Geosupport application.'
+  homepage_image = '/images/runtime.png'
 
   ## You can enable to add anchor links to header elements
   # enable_anchor_link = true
@@ -44,13 +43,16 @@ summaryLength = 30
     meta_description = "Hugo Whisper is a documentation theme built with Hugo."
     meta_og_title = "Hugo Whisper Theme"
     meta_og_type = "website"
-    meta_og_url = "https://hugo-whisper.netlify.com"
-    meta_og_image = "https://raw.githubusercontent.com/JugglerX/hugo-whisper-theme/master/images/tn.png"
-    meta_og_description = "Hugo Whisper is a documentation theme built with Hugo."
+    meta_og_url = "https://github.com/mlipper/bleat"
+    meta_og_image = "/images/logo.png"
+    #meta_og_image = "https://raw.githubusercontent.com/JugglerX/hugo-whisper-theme/master/images/tn.png"
+    meta_og_description = "Bleat is a farm for goats."
     meta_twitter_card = "summary"
-    meta_twitter_site = "@zerostaticio"
-    meta_twitter_creator = "@zerostaticio"
+    meta_twitter_site = "@MatthewLipper"
+    meta_twitter_creator = "@MatthewLipper"
 
   [params.logo]
-      mobile = "/images/logo-mobile.svg"
-      standard  = "/images/logo.svg"
+      #mobile = "/images/logo-mobile.svg"
+      #standard  = "/images/logo.svg"
+      mobile = "/images/logo.png"
+      standard  = "/images/logo.png"
